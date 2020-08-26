@@ -61,9 +61,11 @@ public class Setup {
     			// make linux chrome auto adjustable -- size issue should not come
 
     			ChromeOptions options = new ChromeOptions();
-   				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+   			/*	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
     				+ "/src/main/java/com/irm/resources/Drivers/chromedriver_v140");
-   				options = new ChromeOptions();
+   			*/	
+    			System.setProperty("webdriver.chrome.driver", "/usr/bin/");
+    			options = new ChromeOptions();
     				options.setHeadless(true);
     				options.setAcceptInsecureCerts(true);
 
