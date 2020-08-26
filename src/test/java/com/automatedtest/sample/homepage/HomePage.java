@@ -34,6 +34,7 @@ public class HomePage extends BasePage{
 
     void checkTitle(String title) {
         String displayedTitle = driver.getTitle();
+        System.out.println("displyed title = "+displayedTitle);
         Assert.assertTrue("Displayed title is " + displayedTitle + " instead of " + title,
                 title.equals(displayedTitle));
     }
