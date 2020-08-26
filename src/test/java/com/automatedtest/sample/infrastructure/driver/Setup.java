@@ -21,6 +21,8 @@ public class Setup {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("['start-maximized']");
+                System.setProperty("webdriver.chrome.driver",
+						"src\\main\\java\\drivers\\chromedriver_v140_win.exe");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
