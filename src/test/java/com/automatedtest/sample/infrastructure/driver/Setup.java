@@ -64,7 +64,7 @@ public class Setup {
    			/*	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
     				+ "/src/main/java/com/irm/resources/Drivers/chromedriver_v140");
    			*/	
-    			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    			System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
     			options = new ChromeOptions();
     				options.setHeadless(true);
     				options.setAcceptInsecureCerts(true);
