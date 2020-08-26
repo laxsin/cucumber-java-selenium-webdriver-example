@@ -13,6 +13,7 @@ public class Setup {
     @Before
     public void setWebDriver() throws Exception {
 
+    	// for windows
         String browser = System.getProperty("browser");
         if (browser == null) {
             browser = "chrome";
@@ -22,7 +23,7 @@ public class Setup {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("['start-maximized']");
                 System.setProperty("webdriver.chrome.driver",
-						"src\\main\\java\\drivers\\chromedriver_v140_win.exe");
+						"src/main/java/drivers/chromedriver_v140_win.exe");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
