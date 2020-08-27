@@ -71,8 +71,10 @@ public class Setup {
 */
     				
     				options.addArguments("--headless");
+    				options.addArguments("--disable-setuid-sandbox");
    					// options.addArguments("disable-gpu");
-   					/*options.addArguments("--test-type");
+   					
+    				options.addArguments("--test-type");
    					// options.addArguments("--window-size=1920,1080");
    					options.addArguments("window-size=1920,1080");
     				// options.addArguments("start-maximized");
@@ -88,7 +90,7 @@ public class Setup {
     				options.addArguments("--proxy-bypass-list=*");
     				options.addArguments("--disable-dev-shm-usage");
     				options.addArguments("--user-data-dir='/home/practiceframework/.config/google-chrome/default'");
-    			*/
+    			
     				
     				System.out.println("Options are set");
 
