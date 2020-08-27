@@ -73,6 +73,12 @@
     <artifactId>selenium-chrome-driver</artifactId>
     <version>4.0.0-alpha-4</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-remote-driver</artifactId>
+    <version>4.0.0-alpha-4</version>
+</dependency>
 
    
    
