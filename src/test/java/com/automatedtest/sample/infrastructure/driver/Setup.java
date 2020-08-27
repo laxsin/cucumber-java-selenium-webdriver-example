@@ -66,9 +66,10 @@ public class Setup {
    			*/	
     			System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
     			options = new ChromeOptions();
-    				options.setHeadless(true);
+/*    				options.setHeadless(true);
     				options.setAcceptInsecureCerts(true);
-
+*/
+    				
     				options.addArguments("--headless");
    					// options.addArguments("disable-gpu");
    					options.addArguments("--test-type");
