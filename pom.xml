@@ -59,17 +59,21 @@
        <version>1.7.5</version>
    </dependency>
    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-support</artifactId>
-    <version>3.5.3</version>
+    <version>4.0.0-alpha-4</version>
 </dependency>
+
    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-chrome-driver</artifactId>
-    <version>3.5.3</version>
+    <version>4.0.0-alpha-4</version>
 </dependency>
+
    
    
     </dependencies>
