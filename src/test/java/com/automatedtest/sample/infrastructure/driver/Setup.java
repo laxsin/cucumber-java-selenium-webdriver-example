@@ -60,7 +60,10 @@ public class Setup {
 			
 			System.out.println("executing linux commands");
 		//	ExecuteShellCommandRuntimeExec("ls -lrt");
-			ExecuteShellCommandRuntimeExec("echo $HOME");
+			ExecuteShellCommandRuntimeExec("pwd");
+			ExecuteShellCommandRuntimeExec("cd /home/");
+			ExecuteShellCommandRuntimeExec("ls");
+		//	ExecuteShellCommandRuntimeExec("echo $HOME");
 			// echo $HOME
 			// /home/practiceframework/
 			// /home/practiceframework/.config/google-chrome
