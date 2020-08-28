@@ -56,7 +56,7 @@ public class Setup {
 // 			echo $HOME
 //			/home/practiceframework/
 //			/home/practiceframework/.config/google-chrome
-			options.addArguments("--user-data-dir='$HOME/.config/google-chrome'");
+			options.addArguments("--user-data-dir='$HOME/.config/chromedriver'");
 
 //			options.addArguments("--disable-setuid-sandbox");
 // 			options.addArguments("disable-gpu");
