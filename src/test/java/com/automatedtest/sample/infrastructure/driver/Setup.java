@@ -59,8 +59,8 @@ public class Setup {
 			options.addArguments("--no-sandbox");
 			
 			System.out.println("executing linux commands");
-			ExecuteShellCommandRuntimeExec("ls -lrt");
-			ExecuteShellCommandRuntimeExec("$HOME");
+		//	ExecuteShellCommandRuntimeExec("ls -lrt");
+			ExecuteShellCommandRuntimeExec("echo $HOME");
 			// echo $HOME
 			// /home/practiceframework/
 			// /home/practiceframework/.config/google-chrome
