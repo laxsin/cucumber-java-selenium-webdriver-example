@@ -53,7 +53,7 @@ public class Setup {
            		System.out.println("inside linux system");
             		
     			// /usr/bin/chromedriver 75 version in linux
-    			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    			 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
  				System.setProperty("webdriver.chrome.driver",
     				System.getProperty("user.dir") + "src/main/java/drivers/chromedriver_v140");
@@ -64,7 +64,7 @@ public class Setup {
    			/*	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
     				+ "/src/main/java/com/irm/resources/Drivers/chromedriver_v140");
    			*/	
-    			System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+    			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     			options = new ChromeOptions();
 /*    				options.setHeadless(true);
     				options.setAcceptInsecureCerts(true);
@@ -89,7 +89,8 @@ public class Setup {
     				options.addArguments("--proxy-server='direct://'");
     				options.addArguments("--proxy-bypass-list=*");
     				options.addArguments("--disable-dev-shm-usage");
-    				options.addArguments("--user-data-dir='/home/practiceframework/.config/google-chrome/default'");
+    				//     /home/practiceframework/.config/google-chrome
+    				options.addArguments("--user-data-dir='$HOME/.config/google-chrome'");
     			
     				
     				System.out.println("Options are set");
@@ -115,9 +116,9 @@ public class Setup {
             	
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("['start-maximized']");
-                System.setProperty("webdriver.chrome.driver",
+             /*   System.setProperty("webdriver.chrome.driver",
 						"src/main/java/drivers/chromedriver_v140_win.exe");
-                driver = new ChromeDriver(chromeOptions);
+             */   driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
