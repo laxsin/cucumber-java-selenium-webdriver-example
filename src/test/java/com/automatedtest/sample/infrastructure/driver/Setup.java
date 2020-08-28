@@ -58,16 +58,16 @@ public class Setup {
 			options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
 			
-			System.out.println("executing linux commands");
-		//	ExecuteShellCommandRuntimeExec("ls -lrt");
+		//	System.out.println("executing linux commands");
+		/*//	ExecuteShellCommandRuntimeExec("ls -lrt");
 			ExecuteShellCommandRuntimeExec("pwd");
 			ExecuteShellCommandRuntimeExec("cd /home/");
 			ExecuteShellCommandRuntimeExec("ls");
 		//	ExecuteShellCommandRuntimeExec("echo $HOME");
-			// echo $HOME
+		*/	// echo $HOME
 			// /home/practiceframework/
 			// /home/practiceframework/.config/google-chrome
-			options.addArguments("--user-data-dir='$HOME/.config/chromedriver'");
+			options.addArguments("--user-data-dir='$HOME/.config/google-chrome'");
 
 			// options.addArguments("--disable-setuid-sandbox");
 			// options.addArguments("disable-gpu");
