@@ -68,7 +68,7 @@ public class Setup {
 		*/	// echo $HOME
 			// /home/practiceframework/
 			// /home/practiceframework/.config/google-chrome
-			options.addArguments("--user-data-dir='$HOME/.config/chromedriver'");
+	//		options.addArguments("--user-data-dir='$HOME/.config/chromedriver'");
 
 			// options.addArguments("--disable-setuid-sandbox");
 			// options.addArguments("disable-gpu");
@@ -112,7 +112,10 @@ public class Setup {
 			// driver.manage().deleteAllCookies();
 			System.out.println("driver = " + driver);
 			driver = new ChromeDriver(options);
+			driver.get("http://www.google.com");
+			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
+			System.out.println(driver.getTitle());
 			break;
 		case "firefox":
 			driver = new FirefoxDriver();
