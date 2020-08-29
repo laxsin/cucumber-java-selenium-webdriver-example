@@ -60,7 +60,8 @@ public class Setup {
 			System.out.println("caps set");
 			// driver.manage().deleteAllCookies();
 			driver = new ChromeDriver(options);
-			driver.get("http://www.google.com");
+		//	driver.get("http://www.google.com");
+			driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
 			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			System.out.println(driver.getTitle());
