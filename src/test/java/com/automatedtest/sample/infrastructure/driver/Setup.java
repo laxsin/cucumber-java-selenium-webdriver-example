@@ -54,8 +54,8 @@ public class Setup {
 			options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
-			options.addArguments("--screenshot"); 		// takes screenshot of the cuurent page and put it in root dir
-			/*options.addArguments("--dump-dom"); 		// prints the DOM
+			/*options.addArguments("--screenshot"); 		// takes screenshot of the cuurent page and put it in root dir
+			options.addArguments("--dump-dom"); 		// prints the DOM
 			*/	
 			options.addArguments("--remote-debugging-port=9222"); // navigate to http://localhost:9222 in another browser.
 			System.out.println("Options are set");
