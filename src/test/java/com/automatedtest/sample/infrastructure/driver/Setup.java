@@ -43,7 +43,7 @@ public class Setup {
 		case "chrome":
 			System.out.println("inside linux system");
 	//		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			System.setProperty("webdriver.chrome.driver", "automated-test-sample/src/main/java/drivers/chromedriver_v84_linux");
+			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
 
 			/*
 			 * chromedriver --user-data-dir=$HOME/.config/google-chrome
