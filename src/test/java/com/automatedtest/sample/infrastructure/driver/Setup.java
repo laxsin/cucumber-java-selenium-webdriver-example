@@ -82,16 +82,19 @@ public class Setup {
 
 	public boolean verifyLogin() {
 		try {
+			Thread.sleep(10000);
 			System.out.println("entering email");
 			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
 			System.out.println("clicking Next");
 			driver.findElement(By.id("identifierNext")).click();
 			Thread.sleep(10000);
 			System.out.println("Entering password");
+			Thread.sleep(10000);
 			driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
 			System.out.println("clicking next again");
 			driver.findElement(By.id("passwordNext")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			Thread.sleep(10000);
 			if (driver.getTitle().equals("Iron Mountain InSight"))
 				return true;
 		} catch (Exception e) {
