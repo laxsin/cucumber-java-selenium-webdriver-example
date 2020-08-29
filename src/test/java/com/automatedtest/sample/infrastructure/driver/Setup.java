@@ -3,7 +3,9 @@ package com.automatedtest.sample.infrastructure.driver;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -84,7 +86,7 @@ public boolean verifyLogin() {
 			driver.findElement(By.id("identifierNext")).click();
 			Thread.sleep(10000);
 			System.out.println("Entering password");
-			driver.findElement(By.xpath(IRM_RMAAS_Constants.passwordBox)).sendKeys("PerfLo@dTest2020");
+			driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
 			System.out.println("clicking next again");
 			driver.findElement(By.id("passwordNext")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -94,7 +96,8 @@ if (driver.getTitle().equals("Iron Mountain InSight"))
 			e.printStackTrace();
 		}
 		return false;
-}																																		}
+}
+
 	public void ExecuteShellCommandRuntimeExec(String cmd) {
 		try {
 			Process process = Runtime.getRuntime().exec(cmd); 
