@@ -65,11 +65,12 @@ public class Setup {
 			// driver.manage().deleteAllCookies();
 			driver = new ChromeDriver(options);
 			// driver.get("http://www.google.com");
-			driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
+		//	driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
+		//	driver.get(url);
 			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			System.out.println(driver.getTitle());
-			verifyLogin();
+		//	verifyLogin();
 			break;
 		case "firefox":
 			driver = new FirefoxDriver();
