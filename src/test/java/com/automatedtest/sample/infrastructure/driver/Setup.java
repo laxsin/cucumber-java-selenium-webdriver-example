@@ -45,6 +45,8 @@ public class Setup {
 	//		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
 
+			
+
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setJavascriptEnabled(true);
 
@@ -57,7 +59,6 @@ public class Setup {
 			options.merge(cap);
 			System.out.println("caps set");
 			// driver.manage().deleteAllCookies();
-			System.out.println("driver = " + driver);
 			driver = new ChromeDriver(options);
 			driver.get("http://www.google.com");
 			Thread.sleep(5000);
