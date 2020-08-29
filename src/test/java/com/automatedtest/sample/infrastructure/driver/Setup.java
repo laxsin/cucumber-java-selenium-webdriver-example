@@ -79,12 +79,12 @@ public class Setup {
 public boolean verifyLogin() {
 		try {
 			System.out.println("entering email");
-			driver.findElement(By.id("identifierId")).sendKeys(IRM_RMAAS_Constants.emailIDValue);
+			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
 			System.out.println("clicking Next");
 			driver.findElement(By.id("identifierNext")).click();
 			Thread.sleep(10000);
 			System.out.println("Entering password");
-			driver.findElement(By.xpath(IRM_RMAAS_Constants.passwordBox)).sendKeys(IRM_RMAAS_Constants.passwordValue);
+			driver.findElement(By.xpath(IRM_RMAAS_Constants.passwordBox)).sendKeys("PerfLo@dTest2020");
 			System.out.println("clicking next again");
 			driver.findElement(By.id("passwordNext")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
