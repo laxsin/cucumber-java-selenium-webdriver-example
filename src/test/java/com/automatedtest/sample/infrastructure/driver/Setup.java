@@ -75,6 +75,26 @@ public class Setup {
 		}
 	}
 
+
+public boolean verifyLogin() {
+		try {
+			System.out.println("entering email");
+			driver.findElement(By.id("identifierId")).sendKeys(IRM_RMAAS_Constants.emailIDValue);
+			System.out.println("clicking Next");
+			driver.findElement(By.id("identifierNext")).click();
+			Thread.sleep(10000);
+			System.out.println("Entering password");
+			driver.findElement(By.xpath(IRM_RMAAS_Constants.passwordBox)).sendKeys(IRM_RMAAS_Constants.passwordValue);
+			System.out.println("clicking next again");
+			driver.findElement(By.id("passwordNext")).click();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+if (driver.getTitle().equals("Iron Mountain InSight"))
+				return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+}																																		}
 	public void ExecuteShellCommandRuntimeExec(String cmd) {
 		try {
 			Process process = Runtime.getRuntime().exec(cmd); 
