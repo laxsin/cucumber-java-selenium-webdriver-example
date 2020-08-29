@@ -44,10 +44,8 @@ public class Setup {
 		switch (browser) {
 		case "chrome":
 			System.out.println("inside linux system");
-	//		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
-
-			
 
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setJavascriptEnabled(true);
@@ -62,11 +60,12 @@ public class Setup {
 			System.out.println("caps set");
 			// driver.manage().deleteAllCookies();
 			driver = new ChromeDriver(options);
-		//	driver.get("http://www.google.com");
+			// driver.get("http://www.google.com");
 			driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
 			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			System.out.println(driver.getTitle());
+			verifyLogin();
 			break;
 		case "firefox":
 			driver = new FirefoxDriver();
@@ -77,8 +76,7 @@ public class Setup {
 		}
 	}
 
-
-public boolean verifyLogin() {
+	public boolean verifyLogin() {
 		try {
 			System.out.println("entering email");
 			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
@@ -90,21 +88,21 @@ public boolean verifyLogin() {
 			System.out.println("clicking next again");
 			driver.findElement(By.id("passwordNext")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-if (driver.getTitle().equals("Iron Mountain InSight"))
+			if (driver.getTitle().equals("Iron Mountain InSight"))
 				return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
-}
+	}
 
 	public void ExecuteShellCommandRuntimeExec(String cmd) {
 		try {
-			Process process = Runtime.getRuntime().exec(cmd); 
-			StringBuilder output = new StringBuilder(); 
-			BufferedReader reader = new BufferedReader(new InputStreamReader (process.getInputStream()));
+			Process process = Runtime.getRuntime().exec(cmd);
+			StringBuilder output = new StringBuilder();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line;
-			while((line = reader.readLine()) != null) {
+			while ((line = reader.readLine()) != null) {
 				output.append(line + "\n");
 			}
 			int exitVal = process.waitFor();
@@ -115,11 +113,11 @@ if (driver.getTitle().equals("Iron Mountain InSight"))
 			} else {
 				System.out.println("Something abnormal has haapened :( ");
 			}
-			
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (InterruptedException e) {
-		e.printStackTrace();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
-}
 }
