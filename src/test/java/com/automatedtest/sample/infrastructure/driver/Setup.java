@@ -112,8 +112,11 @@ public class Setup {
 				return true;
 			}
 		} catch (Exception e) {
+			System.out.println(driver.getTitle());
 			e.printStackTrace();
 		}
+		System.out.println("title not matched");
+		System.out.println(driver.getTitle());
 		return false;
 	}
 
