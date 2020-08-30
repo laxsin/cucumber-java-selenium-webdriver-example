@@ -85,63 +85,32 @@ public class Setup {
 
 	public boolean verifyLogin() {
 		try {
-			Thread.sleep(20000);
+		//	Thread.sleep(20000);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		/*	System.out.println("finding next buuton");
-			try {
-			if(driver.findElement(By.id("identifierNext")).isDisplayed()) {
-				System.out.println("Next is displayed");
-			}
-			}catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("Next is not displayed");
-			}
-		*/	
-			
 			System.out.println("entering email");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-	//		Thread.sleep(20000);
-//			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
 			driver.findElement(By.id("Email")).click();
-			System.out.println("clicked email textbox");
 			driver.findElement(By.id("Email")).sendKeys("perftest01@ironmountain-insight.com");
-		 
-		//	driver.findElement(By.className("AxOyFc snByac")).sendKeys("perftest01@ironmountain-insight.com");;
-			System.out.println("clicking Next");
-		//	driver.findElement(By.id("identifierNext")).click();
+		 	System.out.println("clicking Next");
 			driver.findElement(By.id("next")).click();
 			System.out.println("clicked on Next");
 			
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			
-		//	Thread.sleep(10000);
 			System.out.println("Entering password");
-			Thread.sleep(20000);
-			System.out.println("********************************************************");
-			System.out.println(driver.getPageSource());
-			System.out.println("*********************************************************");
 			WebElement ele = driver.findElement(By.id("Passwd-hidden"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", ele);
-			System.out.println("cliecked password");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		//	ele.sendKeys("PerfLo@dTest2020");
 			executor.executeScript("document.getElementById('Passwd-hidden').value='PerfLo@dTest2020';");
 			System.out.println("entered password");
-	/*//		driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
-			driver.findElement(By.id("Passwd-hidden")).click();
-			System.out.println("cliecked password");
-			driver.findElement(By.id("Passwd-hidden")).sendKeys("PerfLo@dTest2020");
-	*/		
 			System.out.println("clicking next again");
-	//		driver.findElement(By.id("passwordNext")).click();
 			driver.findElement(By.id("next")).click();
 			System.out.println("clicked next again");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(10000);
-			if (driver.getTitle().equals("Iron Mountain InSight"))
+			if (driver.getTitle().equals("Iron Mountain InSight")) {
+				System.out.println(driver.getTitle());
 				return true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
