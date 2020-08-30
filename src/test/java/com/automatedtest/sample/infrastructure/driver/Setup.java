@@ -72,10 +72,6 @@ public class Setup {
 		//	driver.get(url);
 			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
-			System.out.println(driver.getTitle());
-			System.out.println("********************************************************");
-			System.out.println(driver.getPageSource());
-			System.out.println("*********************************************************");
 			verifyLogin();
 			break;
 		case "firefox":
@@ -115,10 +111,15 @@ public class Setup {
 		//	driver.findElement(By.id("identifierNext")).click();
 			driver.findElement(By.id("next")).click();
 			System.out.println("clicked on Next");
+			
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
 		//	Thread.sleep(10000);
 			System.out.println("Entering password");
 			Thread.sleep(20000);
+			System.out.println("********************************************************");
+			System.out.println(driver.getPageSource());
+			System.out.println("*********************************************************");
 			WebElement ele = driver.findElement(By.id("Passwd-hidden"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", ele);
