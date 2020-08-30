@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.Before;
 
@@ -54,23 +55,27 @@ public class Setup {
 			options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
+		//	options.addArguments(arguments)
 			/*options.addArguments("--screenshot"); 		// takes screenshot of the cuurent page and put it in root dir
 			options.addArguments("--dump-dom"); 		// prints the DOM
 			*/	
-			options.addArguments("--remote-debugging-port=9222"); // navigate to http://localhost:9222 in another browser.
+		//	options.addArguments("--remote-debugging-port=9222"); // navigate to http://localhost:9222 in another browser.
 			System.out.println("Options are set");
 
 			options.merge(cap);
 			System.out.println("caps set");
 			// driver.manage().deleteAllCookies();
 			driver = new ChromeDriver(options);
-			// driver.get("http://www.google.com");
-		//	driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
+		//	 driver.get("http://www.google.com");
+			driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
 		//	driver.get(url);
 			Thread.sleep(5000);
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			System.out.println(driver.getTitle());
-		//	verifyLogin();
+			System.out.println("********************************************************");
+			System.out.println(driver.getPageSource());
+			System.out.println("*********************************************************");
+			verifyLogin();
 			break;
 		case "firefox":
 			driver = new FirefoxDriver();
@@ -83,23 +88,46 @@ public class Setup {
 
 	public boolean verifyLogin() {
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(20000);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		/*	System.out.println("finding next buuton");
+			try {
+			if(driver.findElement(By.id("identifierNext")).isDisplayed()) {
+				System.out.println("Next is displayed");
+			}
+			}catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Next is not displayed");
+			}
+		*/	
 			
 			System.out.println("entering email");
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			
-			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
+			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	//		Thread.sleep(20000);
+//			driver.findElement(By.id("identifierId")).sendKeys("perftest01@ironmountain-insight.com");
+			driver.findElement(By.id("Email")).click();
+			System.out.println("clicked email textbox");
+			driver.findElement(By.id("Email")).sendKeys("perftest01@ironmountain-insight.com");
+		 
+		//	driver.findElement(By.className("AxOyFc snByac")).sendKeys("perftest01@ironmountain-insight.com");;
 			System.out.println("clicking Next");
-			driver.findElement(By.id("identifierNext")).click();
+		//	driver.findElement(By.id("identifierNext")).click();
+			driver.findElement(By.id("next")).click();
+			System.out.println("clicked on Next");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			Thread.sleep(10000);
+		//	Thread.sleep(10000);
 			System.out.println("Entering password");
-			Thread.sleep(10000);
+			Thread.sleep(20000);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
+	//		driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
+			driver.findElement(By.id("Passwd-hidden")).click();
+			System.out.println("cliecked password");
+			driver.findElement(By.id("Passwd-hidden")).sendKeys("PerfLo@dTest2020");
+			
 			System.out.println("clicking next again");
-			driver.findElement(By.id("passwordNext")).click();
+	//		driver.findElement(By.id("passwordNext")).click();
+			driver.findElement(By.id("next")).click();
+			System.out.println("clicked next again");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(10000);
