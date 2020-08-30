@@ -6,12 +6,13 @@ import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.Before;
 
@@ -118,12 +119,18 @@ public class Setup {
 		//	Thread.sleep(10000);
 			System.out.println("Entering password");
 			Thread.sleep(20000);
+			WebElement ele = driver.findElement(By.id("Passwd-hidden"));
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", ele);
+			System.out.println("cliecked password");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	//		driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
+			ele.sendKeys("PerfLo@dTest2020");
+			System.out.println("entered password");
+	/*//		driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
 			driver.findElement(By.id("Passwd-hidden")).click();
 			System.out.println("cliecked password");
 			driver.findElement(By.id("Passwd-hidden")).sendKeys("PerfLo@dTest2020");
-			
+	*/		
 			System.out.println("clicking next again");
 	//		driver.findElement(By.id("passwordNext")).click();
 			driver.findElement(By.id("next")).click();
