@@ -125,7 +125,8 @@ public class Setup {
 			executor.executeScript("arguments[0].click();", ele);
 			System.out.println("cliecked password");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			ele.sendKeys("PerfLo@dTest2020");
+		//	ele.sendKeys("PerfLo@dTest2020");
+			executor.executeScript("document.getElementById('Passwd-hidden').value='PerfLo@dTest2020';");
 			System.out.println("entered password");
 	/*//		driver.findElement(By.xpath("//input[@type='password'")).sendKeys("PerfLo@dTest2020");
 			driver.findElement(By.id("Passwd-hidden")).click();
