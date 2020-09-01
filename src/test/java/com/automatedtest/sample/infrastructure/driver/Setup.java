@@ -47,8 +47,8 @@ public class Setup {
 		case "chrome":
 			System.out.println("inside linux system");
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-	//		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
-			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_Linux_v85");
+			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
+	//		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v76_linux");
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setJavascriptEnabled(true);
 
@@ -56,21 +56,23 @@ public class Setup {
 			options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
-		//	options.addArguments(arguments)
-			/*options.addArguments("--screenshot"); 		// takes screenshot of the cuurent page and put it in root dir
-			options.addArguments("--dump-dom"); 		// prints the DOM
-			*/	
-		//	options.addArguments("--remote-debugging-port=9222"); // navigate to http://localhost:9222 in another browser.
-			System.out.println("Options are set");
-
+		
 			options.merge(cap);
-			System.out.println("caps set");
-			// driver.manage().deleteAllCookies();
 			driver = new ChromeDriver(options);
-		//	 driver.get("http://www.google.com");
-			driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
+			driver.get("http://www.gmail.com");
+		//	driver.get("https://userapi.dit03-insight-dev.com/oauth2/207931/SSO/login/insight?RelayState=/keep");
 		//	driver.get(url);
-			Thread.sleep(5000);
+			Thread.sleep(15000);
+			System.out.println(driver.getTitle());
+			if(driver.getTitle().equals("Gmail")) {
+				System.out.println("On Gmail login screen");
+				System.out.println("***********************************************");
+				
+				System.out.println(driver.getPageSource());
+				
+				System.out.println("***********************************************");
+
+			}
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			verifyLogin();
 			break;
@@ -89,18 +91,18 @@ public class Setup {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			System.out.println("entering email");
 			driver.findElement(By.id("Email")).click();
-			driver.findElement(By.id("Email")).sendKeys("perftest01@ironmountain-insight.com");
+			driver.findElement(By.id("Email")).sendKeys("devopstestingpractice@gmail.com");
 		 	System.out.println("clicking Next");
 			driver.findElement(By.id("next")).click();
 			System.out.println("clicked on Next");
-			
+			Thread.sleep(20000);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			System.out.println("Entering password");
 			WebElement ele = driver.findElement(By.id("Passwd-hidden"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", ele);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			executor.executeScript("document.getElementById('Passwd-hidden').value='PerfLo@dTest2020';");
+			executor.executeScript("document.getElementById('Passwd-hidden').value='Learn&Master@123';");
 			System.out.println("entered password");
 			System.out.println("clicking next again");
 			driver.findElement(By.id("next")).click();
