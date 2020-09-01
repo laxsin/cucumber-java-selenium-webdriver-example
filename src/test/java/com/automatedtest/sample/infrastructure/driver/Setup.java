@@ -111,6 +111,15 @@ public class Setup {
 			Thread.sleep(10000);
 			if (driver.getTitle().equals("Gmail")) {
 				System.out.println(driver.getTitle());
+				try {
+					if(driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[1]/div[3]/header/div[2]/div[2]/div[2]/form/div/table/tbody/tr/td/table/tbody/tr/td/div/input[1]")).isDisplayed()) {
+						System.out.println("Search in gmail is displayed");
+					}
+				}catch (Exception e) {
+					System.out.println("Search in gmail is no displayed");
+					e.printStackTrace();
+				}
+				
 				return true;
 			}
 		} catch (Exception e) {
@@ -119,15 +128,7 @@ public class Setup {
 		}
 		System.out.println("title not matched");
 		System.out.println(driver.getTitle());
-		try {
-			if(driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[1]/div[3]/header/div[2]/div[2]/div[2]/form/div/table/tbody/tr/td/table/tbody/tr/td/div/input[1]")).isDisplayed()) {
-				System.out.println("Search in gmail is displayed");
-			}
-		}catch (Exception e) {
-			System.out.println("Search in gmail is no displayed");
-			e.printStackTrace();
-		}
-		return false;
+	return false;
 	}
 
 	public void ExecuteShellCommandRuntimeExec(String cmd) {
