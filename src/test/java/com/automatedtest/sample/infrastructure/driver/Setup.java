@@ -109,7 +109,7 @@ public class Setup {
 			System.out.println("clicked next again");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(10000);
-			if (driver.getTitle().equals("Iron Mountain InSight")) {
+			if (driver.getTitle().equals("Gmail")) {
 				System.out.println(driver.getTitle());
 				return true;
 			}
