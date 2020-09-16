@@ -1,0 +1,262 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-09-02T20:31:58.929Z",
+        "before": [
+          {
+            "result": {
+              "error_message": "java.lang.IllegalStateException: The driver executable does not exist: D:\\Learnings\\Hyegiea\\CucumberSeleniumProjectForHygieia\\cucumber-java-selenium-webdriver-example\\src\\main\\java\\drivers\\chromedriver_v84_linux\r\n\tat com.google.common.base.Preconditions.checkState(Preconditions.java:585)\r\n\tat org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:154)\r\n\tat org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:36)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:195)\r\n\tat org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:389)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:118)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:139)\r\n\tat com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver(Setup.java:64)\r\n",
+              "duration": 332000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Check page display",
+        "description": "",
+        "id": "home-page;check-page-display;;2",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.saveScreenshotsForScenario(TearDown.java:28)\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(TearDown.java:20)\r\n",
+              "duration": 14000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "A user navigates to HomePage \"fr\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "fr",
+                  "offset": 30
+                }
+              ],
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.aUserNavigatesToHomePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Google logo is displayed",
+            "match": {
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.googleLogoIsDisplayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "search bar is displayed",
+            "match": {
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.searchBarIsDisplayed()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@home_page"
+          },
+          {
+            "name": "@home_page_display"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-09-02T20:31:59.563Z",
+        "before": [
+          {
+            "result": {
+              "error_message": "java.lang.IllegalStateException: The driver executable does not exist: D:\\Learnings\\Hyegiea\\CucumberSeleniumProjectForHygieia\\cucumber-java-selenium-webdriver-example\\src\\main\\java\\drivers\\chromedriver_v84_linux\r\n\tat com.google.common.base.Preconditions.checkState(Preconditions.java:585)\r\n\tat org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:154)\r\n\tat org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:36)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:195)\r\n\tat org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:389)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:118)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:139)\r\n\tat com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver(Setup.java:64)\r\n",
+              "duration": 26000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Check page display",
+        "description": "",
+        "id": "home-page;check-page-display;;3",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.saveScreenshotsForScenario(TearDown.java:28)\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(TearDown.java:20)\r\n",
+              "duration": 1000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "A user navigates to HomePage \"com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "com",
+                  "offset": 30
+                }
+              ],
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.aUserNavigatesToHomePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Google logo is displayed",
+            "match": {
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.googleLogoIsDisplayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "search bar is displayed",
+            "match": {
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.searchBarIsDisplayed()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@home_page"
+          },
+          {
+            "name": "@home_page_display"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-09-02T20:31:59.615Z",
+        "before": [
+          {
+            "result": {
+              "error_message": "java.lang.IllegalStateException: The driver executable does not exist: D:\\Learnings\\Hyegiea\\CucumberSeleniumProjectForHygieia\\cucumber-java-selenium-webdriver-example\\src\\main\\java\\drivers\\chromedriver_v84_linux\r\n\tat com.google.common.base.Preconditions.checkState(Preconditions.java:585)\r\n\tat org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:154)\r\n\tat org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:36)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:195)\r\n\tat org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:389)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:118)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:139)\r\n\tat com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver(Setup.java:64)\r\n",
+              "duration": 15000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.Setup.setWebDriver()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Check title",
+        "description": "",
+        "id": "home-page;check-title",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.saveScreenshotsForScenario(TearDown.java:28)\r\n\tat com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(TearDown.java:20)\r\n",
+              "duration": 2000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.automatedtest.sample.infrastructure.driver.TearDown.quitDriver(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "A user navigates to HomePage \"fr\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "fr",
+                  "offset": 30
+                }
+              ],
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.aUserNavigatesToHomePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "page title is \"Google\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Google",
+                  "offset": 15
+                }
+              ],
+              "location": "com.automatedtest.sample.homepage.HomePageSteps.pageTitleIs(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@home_page"
+          },
+          {
+            "name": "@home_page_title"
+          }
+        ]
+      }
+    ],
+    "name": "Home page",
+    "description": "",
+    "id": "home-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/com/automatedtest/sample/Home_page.feature",
+    "tags": []
+  }
+]
