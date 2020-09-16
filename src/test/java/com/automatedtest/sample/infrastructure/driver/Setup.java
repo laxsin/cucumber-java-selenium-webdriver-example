@@ -4,10 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -50,7 +48,8 @@ public class Setup {
 		case "chrome":
 			System.out.println("inside linux system");
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v84_linux");
+			System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_Linux_v85");
+
 	//		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v76_linux");
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setJavascriptEnabled(true);
@@ -62,7 +61,7 @@ public class Setup {
 		
 			options.merge(cap);
 			driver = new ChromeDriver(options);
-			driver.get("http://www.gmail.com");
+		/*	driver.get("http://www.gmail.com");
 			Thread.sleep(15000);
 			System.out.println(driver.getTitle());
 			if(driver.getTitle().equals("Gmail")) {
@@ -74,6 +73,7 @@ public class Setup {
 				System.out.println("***********************************************");
 
 			}
+		*/
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			break;
 		case "firefox":
