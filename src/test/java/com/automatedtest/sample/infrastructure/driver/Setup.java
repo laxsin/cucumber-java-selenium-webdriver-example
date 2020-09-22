@@ -52,10 +52,10 @@ public class Setup {
 
 	//		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver_v76_linux");
 			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setBrowserName("chrome");
 			cap.setJavascriptEnabled(true);
 
 			ChromeOptions options = new ChromeOptions();
-			options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
 		
