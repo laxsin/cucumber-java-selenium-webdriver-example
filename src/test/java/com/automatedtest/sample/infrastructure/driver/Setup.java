@@ -39,8 +39,36 @@ public class Setup {
 	@SuppressWarnings("deprecation")
 	@Before
 	public void setWebDriver() throws Exception {
-		// for linux
+		
 		String browser = System.getProperty("browser");
+        if (browser == null) {
+            browser = "chrome";
+        }
+        switch (browser) {
+            case "chrome":
+            //	for local run
+            	System.setProperty("webdriver.chrome.driver", "D:\\Learnings\\Hyegiea\\CucumberSeleniumProjectForHygieia\\cucumber-java-selenium-webdriver-example\\src\\main\\java\\drivers\\chromedriver_85_win.exe");
+            
+            	// for jenkins run from github
+            	System.setProperty("webdriver.chrome.driver",
+						"src/main/java/com/irm/resources/Drivers/chromedriver_85_win.exe");
+            	ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("['start-maximized']");
+                driver = new ChromeDriver(chromeOptions);
+                break;
+            case "firefox":
+                driver = new FirefoxDriver();
+                driver.manage().window().maximize();
+                break;
+            default:
+                throw new IllegalArgumentException("Browser \"" + browser + "\" isn't supported.");
+        }
+		
+		
+		
+		// uncomment for linux
+		// for linux
+		/*String browser = System.getProperty("browser");
 		if (browser == null) {
 			browser = "chrome";
 		}
@@ -61,7 +89,7 @@ public class Setup {
 		
 			options.merge(cap);
 			driver = new ChromeDriver(options);
-		/*	driver.get("http://www.gmail.com");
+			driver.get("http://www.gmail.com");
 			Thread.sleep(15000);
 			System.out.println(driver.getTitle());
 			if(driver.getTitle().equals("Gmail")) {
@@ -73,7 +101,7 @@ public class Setup {
 				System.out.println("***********************************************");
 
 			}
-		*/
+		
 			System.out.println("New Chrome driver Initiated successfully in linux");
 			break;
 		case "firefox":
@@ -82,7 +110,7 @@ public class Setup {
 			break;
 		default:
 			throw new IllegalArgumentException("Browser \"" + browser + "\" isn't supported.");
-		}
+		}*/
 	}
 
 
