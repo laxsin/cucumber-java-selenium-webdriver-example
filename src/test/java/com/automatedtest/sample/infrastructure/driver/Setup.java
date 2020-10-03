@@ -51,7 +51,7 @@ public class Setup {
             
             	// for jenkins run from github
             	System.setProperty("webdriver.chrome.driver",
-						"src/main/java/com/irm/resources/Drivers/chromedriver_85_win.exe");
+						"src/main/java/drivers/chromedriver_85_win.exe");
             	ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("['start-maximized']");
                 driver = new ChromeDriver(chromeOptions);
